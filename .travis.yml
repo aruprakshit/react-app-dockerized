@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t aruprakshit/react-app-dockerized -f Procfile.dev .
+  - docker build -t aruprakshit/react-app-dockerized -f Dockerfile.dev .
 
 script:
   - docker run aruprakshit/react-app-dockerized npm run test -- --coverage
