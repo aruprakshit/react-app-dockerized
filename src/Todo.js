@@ -34,7 +34,7 @@ export default class Todo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <h1>TODO LIST</h1>
         <form onSubmit={this.handleSubmit}>
           <input value={this.state.text} onChange={e => this.handleChange(e)} />
