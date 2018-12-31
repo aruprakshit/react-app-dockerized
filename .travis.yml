@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run aruprakshit/react-app-dockerized npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react-app-dockerized-udemy"
+  env: "ReactAppDockerizedUdemy-env"
+  bucket_name: "elasticbeanstalk-us-east-2-732454980299"
+  bucket_path: "react-app-dockerized-udemy"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
